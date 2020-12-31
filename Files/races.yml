@@ -1,0 +1,12 @@
+Settings:
+    Menu-Rows: '3'
+Races:
+  Vladian:
+    Menu-Number: '10'
+    Effects:
+      - 'INCREASE_DAMAGE/1'
+      - 'SLOW_DIGGING/1'
+    Name: Vladian
+    Lore: '&6'
+    Emblem: 7,7,7,7,7,7,7,7,7,7,7,3,3,7,7,7,7,3,7,3,3,7,3,7,7,3,3,3,3,3,3,7,7,7,3,3,3,3,7,7,7,7,3,3,3,3,7,7,7,7,7,7,7,7,7,7,7,3,7,7,7,7,3,7,7
+    Base64-Tag: ''
