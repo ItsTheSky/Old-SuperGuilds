@@ -1,12 +1,15 @@
 package info.itsthesky.SuperGuilds.Utils;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.*;
 import java.net.URL;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -69,11 +72,24 @@ public class FileManager {
 		}
 	}
 
-	public static void writeFile(String path, String node, Object value) {
+	public static Object checkPrimary(String path, String node) {
+		File file = new File("plugins/SuperGuilds/" +path+ ".yml");
+		FileConfiguration configFile = getConfigFile(file.getPath());
+		assert configFile != null;
+		if (configFile.contains(node)) {
+			return configFile.get(node);
+		} else {
+			return null;
+		}
+	}
+
+	public static void writeFile(String path, String node, Object value) throws IOException {
 		File file = new File(path);
 		FileConfiguration configFile = getConfigFile(file.getPath());
 		assert configFile != null;
 		configFile.set(node, value);
+		configFile.save(file);
+		reloadFile(file.getPath());
 	}
 
 	public static List<String> contentFromURL(String url) throws IOException {
@@ -92,6 +108,30 @@ public class FileManager {
 			fw.write(line + "\n");
 		}
 		fw.close();
+	}
+
+	public static Object getPlayerValue(Player player, String node) {
+		return checkFile("plugins/SuperGuilds/players/" + player.getUniqueId() + ".yml", "Datas." + node);
+	}
+
+	public static void verifFile(String file) {
+		File configFile = new File("plugins/SuperGuilds/"+file+".yml");
+		if (!configFile.exists()) {
+			SGUtils.sendConsole("§cThe default " + file + " file is not found. Create one for you ...");
+			List<String> content = null;
+			try {
+				content = FileManager.contentFromURL("https://raw.githubusercontent.com/SkyCraft78/SuperGuilds-8.0/master/Files/"+file+".yml");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			try {
+				assert content != null;
+				FileManager.setContentOfFile("plugins/SuperGuilds/"+file+".yml", content);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			SGUtils.sendConsole("§aThe default " + file + " file is has been created!");
+		}
 	}
 
 }

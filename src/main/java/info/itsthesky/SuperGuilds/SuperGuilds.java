@@ -3,13 +3,13 @@ package info.itsthesky.SuperGuilds;
 import info.itsthesky.SuperGuilds.Utils.FileManager;
 import info.itsthesky.SuperGuilds.Utils.LangManager;
 import info.itsthesky.SuperGuilds.Utils.SGUtils;
+import info.itsthesky.SuperGuilds.events.Join;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SuperGuilds extends JavaPlugin {
@@ -24,30 +24,9 @@ public class SuperGuilds extends JavaPlugin {
 
 
 		/* Files */
-		File configFile = new File("plugins/SuperGuids/config.yml");
-		if (!configFile.exists()) {
+		FileManager.verifFile("races");
+		FileManager.verifFile("config");
 
-
-			SGUtils.sendConsole("§cThe default Configuration file of SuperGuilds isn't found! Create one for you ...");
-			List<String> content = null;
-
-
-			try {
-				content = FileManager.contentFromURL("https://raw.githubusercontent.com/SkyCraft78/SuperGuilds-8.0/master/Files/config.yml");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			try {
-				assert content != null;
-				FileManager.setContentOfFile("plugins/SuperGuilds/config.yml", content);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-
-			SGUtils.sendConsole("§aThe default configuration file has been created!");
-		}
 		FileManager.reloadFile("plugins/SuperGuilds/config.yml");
 		if (!LangManager.verifLangFile(langcode)) {
 			SGUtils.sendConsole("§cCannot found the right locale file with the key code " + langcode + " ! The locale file used is now en_US by default !");
@@ -72,7 +51,6 @@ public class SuperGuilds extends JavaPlugin {
 			}
 		}
 		FileManager.reloadFile("plugins/SuperGuilds/Locales/" + langcode + ".yml");
-
 		SGUtils.sendConsole("§eSuperGuilds §5version §d" + getDescription().getVersion() + " §5made by §d" + getDescription().getAuthors() + " §5is loading ...");
 		/* Dependencies verification */
 		List<String> depend = new ArrayList<>();
@@ -100,5 +78,8 @@ public class SuperGuilds extends JavaPlugin {
 
 		/* Commands */
 		this.getCommand("superguilds").setExecutor(new SGCommand());
+
+		/* Events */
+		getServer().getPluginManager().registerEvents(new Join(), this);
 	}
 }

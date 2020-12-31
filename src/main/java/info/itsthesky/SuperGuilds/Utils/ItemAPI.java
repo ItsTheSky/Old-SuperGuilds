@@ -13,6 +13,7 @@ public class ItemAPI {
 		ItemMeta meta = item.getItemMeta();
 		if (lore != null) { meta.setLore(lore); }
 		if (name != null) { meta.setDisplayName(name); }
+		item.setItemMeta(meta);
 		return item;
 	}
 
@@ -21,6 +22,7 @@ public class ItemAPI {
 		ItemMeta meta = item.getItemMeta();
 		if (lore != null) { meta.setLore(lore); }
 		if (name != null) { meta.setDisplayName(name); }
+		item.setItemMeta(meta);
 		return item;
 	}
 

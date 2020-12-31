@@ -3,6 +3,7 @@ package info.itsthesky.SuperGuilds;
 import info.itsthesky.SuperGuilds.Utils.FileManager;
 import info.itsthesky.SuperGuilds.Utils.LangManager;
 import info.itsthesky.SuperGuilds.Utils.SGUtils;
+import info.itsthesky.SuperGuilds.gui.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,6 +19,11 @@ public class SGCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (args.length == 0) {
+			Main.openMainGUI(player);
+			return true;
+		}
+
+		if (args[0].equalsIgnoreCase("help")) {
 			int sizeOfArg = 2;
 			SGUtils.sendPlayer(player, LangManager.getLangKey("HelpMessage.Header"));
 			for (int i = 1; i<sizeOfArg+1; i++) {
@@ -49,6 +55,7 @@ public class SGCommand implements CommandExecutor {
 				SGUtils.sendPlayer(player, LangManager.getLangKey("ReloadMessage.ReloadAllWaiting"));
 				FileManager.reloadFile("plugins/SuperGuilds/Locales/" + LangManager.getLangCode() + ".yml");
 				FileManager.reloadFile("plugins/SuperGuilds/config.yml");
+				FileManager.reloadFile("plugins/SuperGuilds/races.yml");
 				SGUtils.sendPlayer(player, LangManager.getLangKey("ReloadMessage.ReloadFinished"));
 			}
 			return true;
