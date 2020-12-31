@@ -1,0 +1,20 @@
+Key:
+    Prefix: '&8[&6&lSG&8] '
+    NoConsole: '&cYou cannot do that from the console!'
+    NoPerm: '&cYou don''t have the permission to do that!'
+    HelpMessage:
+        Header: '&8-----[ &6&lSuperGuilds &8]-----'
+        Line1: '&e/g &7- &bOpen the main Guild Menu'
+        Line2: '&e/g help &7- &bSend this message'
+        Footer: '&8-----[ &6&lSuperGuilds &8]-----'
+    ReloadMessage:
+        Header: '&8-----[ &6&lSuperGuilds &8]-----'
+        Info: '&3Possible Reload Arguments:'
+        Line1: '  &eall &7- &bReload everythings into SuperGuilds'
+        Line2: '  &econfig &7- &bReload the config file (config.yml)'
+        Line3: '  &elocale &7- &bReload locale (language file) choosed'
+        Footer: '&8-----[ &6&lSuperGuilds &8]-----'
+        ReloadAllWaiting: '&eReloading every SuperGuilds files ...'
+        ReloadConfigWaiting: '&eReloading configuration file ...'
+        ReloadLocaleWaiting: '&eReloading locale file ...'
+        ReloadFinished: '&aReload finished!'
