@@ -1,18 +1,16 @@
-package info.itsthesky.SuperGuilds;
+package info.itsthesky.SuperGuilds.Utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class SGUtils {
 
-	private static final String prefix = "§8[§6SuperGuilds§8] ";
-
 	public static void sendConsole(String message) {
-		Bukkit.getConsoleSender().sendMessage(prefix + message);
+		Bukkit.getConsoleSender().sendMessage(LangManager.getLangKey("Prefix") + message);
 	}
 
 	public static void sendPlayer(Player player, String message) {
-		player.sendMessage(prefix + message);
+		player.sendMessage(LangManager.getLangKey("Prefix") + message);
 	}
 
 
