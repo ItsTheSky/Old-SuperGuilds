@@ -1,0 +1,5 @@
+name: SuperGuilds
+version: 8.0
+main: info.itsthesky.SuperGuilds.SuperGuilds
+description: The best rework of SuperGuilds, in plugin! SuperGuilds allow your server to have guild (=faction) system, with war and custom building!
+api-version: 1.13
