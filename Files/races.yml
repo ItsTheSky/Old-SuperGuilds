@@ -1,12 +1,71 @@
 Settings:
-    Menu-Rows: '3'
+  Menu-Rows: '3'
+  Items:
+    Close:
+      Item: RED_DYE
+      Name: '&cClose'
+      Slot: '0'
+    Information:
+      Item: PAPER
+      Name: '&8&l» &6&lRace Informations'
+      Slot: '4'
+      Lore:
+      - '&7Race are like power-up you can get.'
+      - '&7Every race got one good potion effect, but'
+      - '&7also one bad effect to make every race equal.'
+      - '&7You can change race with &3Race Right&7.'
+    RaceRight:
+      Item: GOLD_INGOT
+      Name: '&8&l» &e&lRace Rights: &c&l{RIGHTS}'
+      Slot: '8'
 Races:
   Vladian:
-    Menu-Number: '10'
+    Menu-Number: '11'
     Effects:
-      - 'INCREASE_DAMAGE/1'
-      - 'SLOW_DIGGING/1'
+    - INCREASE_DAMAGE/1
+    - SLOW_DIGGING/1
     Name: Vladian
-    Lore: '&6'
-    Emblem: 7,7,7,7,7,7,7,7,7,7,7,3,3,7,7,7,7,3,7,3,3,7,3,7,7,3,3,3,3,3,3,7,7,7,3,3,3,3,7,7,7,7,3,3,3,3,7,7,7,7,7,7,7,7,7,7,7,3,7,7,7,7,3,7,7
-    Base64-Tag: ''
+    Color: '&c'
+    Lore: 'Vladian are good in combat but are not very well miner.'
+    Emblem: 7;7;7;7;7;7;7;7;7;7;7;3;3;7;7;7;7;3;7;3;3;7;3;7;7;3;3;3;3;3;3;7;7;7;3;3;3;3;7;7;7;7;3;3;3;3;7;7;7;7;7;7;7;7;7;7;7;3;7;7;7;7;3;7;7
+    Item: IRON_SWORD
+  Sturgian:
+    Menu-Number: '12'
+    Effects:
+    - FAST_DIGGING/1
+    - WEAKNESS/1
+    Name: Sturgian
+    Color: '&3'
+    Lore: 'Sturgian are weak but can mine a lot faster.'
+    Emblem: 7;5;7;7;7;7;5;7;5;7;7;5;5;7;7;5;5;5;7;5;5;7;5;5;7;5;5;7;7;5;5;7;7;7;5;5;5;5;7;7;7;7;5;5;5;5;7;7;7;5;5;5;5;5;5;7;5;5;5;5;5;5;5;5;7
+    Item: IRON_PICKAXE
+  Townsman:
+    Menu-Number: '13'
+    Effects:
+    - DAMAGE_RESISTANCE/1
+    - SLOW/1
+    Name: Townsman
+    Color: '&e'
+    Lore: 'Townsman are a little bit slow but get less damage.'
+    Emblem: 7;7;7;7;7;7;7;7;7;7;7;7;4;4;4;7;7;7;7;4;4;4;4;4;7;7;7;7;4;4;4;7;7;7;7;7;4;4;4;7;7;7;7;7;7;4;7;7;4;4;4;7;4;4;4;7;7;7;4;4;4;4;4;4;7
+    Item: WHEAT
+  Khuzait:
+    Menu-Number: '14'
+    Effects:
+    - JUMP/1
+    - SLOW_DIGGING/1
+    Name: Khuzait
+    Color: '&a'
+    Lore: 'Khuzait are slow for mine but can jump at more blocks.'
+    Emblem: 7;7;7;7;7;7;7;7;7;b;7;7;b;7;b;7;7;7;7;b;b;7;7;7;7;b;7;b;7;7;b;7;b;7;b;7;7;b;7;b;7;b;7;b;b;7;b;7;7;7;7;7;7;7;7;7;7;7;7;b;b;7;7;7;7
+    Item: RABBIT_FOOT
+  Battanian:
+    Menu-Number: '15'
+    Effects:
+    - REGENERATION/1
+    - HUNGER/1
+    Name: Battanian
+    Color: '&4'
+    Lore: 'Battanian get hunger faster but have small regeneration.'
+    Emblem: 7;7;7;8;8;7;7;7;7;8;7;8;8;7;7;7;8;7;7;8;7;7;7;7;8;8;8;8;8;8;8;7;7;7;8;8;8;7;7;8;7;7;8;8;8;7;7;7;7;7;8;7;8;7;7;7;7;8;8;7;8;8;7;7;7
+    Item: GOLDEN_APPLE
