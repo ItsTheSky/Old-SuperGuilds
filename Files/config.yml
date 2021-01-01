@@ -1,2 +1,3 @@
 Configuration:
-    LocaleKeyCode: en_US
+  LocaleKeyCode: en_US
+  DefaultRaceRight: 5
