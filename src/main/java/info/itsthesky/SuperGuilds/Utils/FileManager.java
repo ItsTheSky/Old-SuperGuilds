@@ -1,8 +1,5 @@
 package info.itsthesky.SuperGuilds.Utils;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -10,7 +7,6 @@ import org.bukkit.entity.Player;
 import java.io.*;
 import java.net.URL;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
