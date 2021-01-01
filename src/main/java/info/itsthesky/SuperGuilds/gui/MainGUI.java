@@ -5,12 +5,12 @@ import info.itsthesky.SuperGuilds.Utils.FileManager;
 import info.itsthesky.SuperGuilds.inventory.InventoryAPI;
 import org.bukkit.entity.Player;
 
-public class Main {
+public class MainGUI {
 
 	public static void openMainGUI(Player player) {
 
 		if (FileManager.getPlayerValue(player, "Race").toString().contains("*")) {
-			Race.openRaceGUI(player);
+			RaceGUI.openRaceGUI(player);
 			return;
 		}
 

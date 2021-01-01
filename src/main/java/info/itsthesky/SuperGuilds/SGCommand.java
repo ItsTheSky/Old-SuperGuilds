@@ -3,7 +3,8 @@ package info.itsthesky.SuperGuilds;
 import info.itsthesky.SuperGuilds.Utils.FileManager;
 import info.itsthesky.SuperGuilds.Utils.LangManager;
 import info.itsthesky.SuperGuilds.Utils.SGUtils;
-import info.itsthesky.SuperGuilds.gui.Main;
+import info.itsthesky.SuperGuilds.gui.MainGUI;
+import info.itsthesky.SuperGuilds.gui.RaceGUI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,7 +20,7 @@ public class SGCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (args.length == 0) {
-			Main.openMainGUI(player);
+			MainGUI.openMainGUI(player);
 			return true;
 		}
 
@@ -30,6 +31,11 @@ public class SGCommand implements CommandExecutor {
 				SGUtils.sendPlayer(player, LangManager.getLangKey("HelpMessage.Line" + i));
 			}
 			SGUtils.sendPlayer(player, LangManager.getLangKey("HelpMessage.Footer"));
+			return true;
+		}
+
+		if (args[0].equalsIgnoreCase("race")) {
+			RaceGUI.openRaceGUI(player);
 			return true;
 		}
 

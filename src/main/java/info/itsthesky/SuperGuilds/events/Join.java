@@ -25,7 +25,7 @@ public class Join implements Listener {
 			yaml.add("Name;" + event.getPlayer().getDisplayName());
 			yaml.add("Guild;*");
 			yaml.add("Race;*");
-			yaml.add("RaceRight;" + FileManager.checkFile(path, "Configuration.DefaultRaceRight"));
+			yaml.add("RaceRight;" + FileManager.checkPrimary("config", "Configuration.DefaultRaceRight"));
 			for (String n : yaml) {
 				String[] values = n.split(";");
 				if (!playerConfig.contains("Datas." + values[0])) {

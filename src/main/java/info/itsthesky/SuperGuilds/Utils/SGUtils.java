@@ -3,6 +3,9 @@ package info.itsthesky.SuperGuilds.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SGUtils {
 
 	public static void sendConsole(String message) {
@@ -13,21 +16,23 @@ public class SGUtils {
 		player.sendMessage(LangManager.getLangKey("Prefix") + message);
 	}
 
-	public static String genEmblem(String design) {
+	public static List<String> genEmblem(String design) {
+		design = design.replace(",", ";");
 		String[] unicodes = design.split(";");
 		int no = 0;
-		String lines;
-		String[] finale = null;
+		String line;
+		List<String> finaleEmblem = new ArrayList<>();
+		String[] dLore = new String[] {"","","","","","","","",""};
 		String msg = null;
-		for (int i1 = 1; i1<9; i1++) {
-			lines = "";
-			for (int i2 = 1; i2<9; i2++) {
-				no++;
+		for (int i = 0; i < 8; i++){
+			line = "";
+			for (int i2 = 0; i2 < 8; i2++){
 				msg = "§" + unicodes[no] + "█";
-				lines = lines + msg;
+				line = line + msg;
+				no++;
 			}
-			finale[i1] = finale[i1] + lines;
+			finaleEmblem.add(line);
 		}
-		return String.join("\n", finale);
+		return finaleEmblem;
 	}
 }

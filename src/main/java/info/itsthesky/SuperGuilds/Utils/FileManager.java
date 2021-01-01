@@ -83,6 +83,15 @@ public class FileManager {
 		}
 	}
 
+	public static void writePrimaryFile(String path, String node, Object value) throws IOException {
+		File file = new File("plugins/SuperGuilds/"+path+".yml");
+		FileConfiguration configFile = getConfigFile(file.getPath());
+		assert configFile != null;
+		configFile.set(node, value);
+		configFile.save(file);
+		reloadFile(file.getPath());
+	}
+
 	public static void writeFile(String path, String node, Object value) throws IOException {
 		File file = new File(path);
 		FileConfiguration configFile = getConfigFile(file.getPath());
