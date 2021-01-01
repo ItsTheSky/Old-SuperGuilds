@@ -44,6 +44,7 @@ dependencies {
     implementation 'com.sk89q.worldguard:worldguard-bukkit:7.0.4'
     implementation 'com.sk89q.worldedit:worldedit-bukkit:7.2.0-SNAPSHOT'
     compile 'de.tr7zw:item-nbt-api-plugin:2.7.1'
+    compile 'xyz.upperlevel.spigot.book:spigot-book-api:1.3'
 }
 
 processResources {
@@ -58,6 +59,7 @@ jar {
 shadowJar {
     dependencies {
         include(dependency('de.tr7zw:item-nbt-api-plugin:.*'))
+        include(dependency('xyz.upperlevel.spigot.book:spigot-book-api:.*'))
     }
 }
 

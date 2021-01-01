@@ -3,12 +3,15 @@ package info.itsthesky.SuperGuilds;
 import info.itsthesky.SuperGuilds.Utils.FileManager;
 import info.itsthesky.SuperGuilds.Utils.LangManager;
 import info.itsthesky.SuperGuilds.Utils.SGUtils;
+import info.itsthesky.SuperGuilds.features.EmblemEditor;
 import info.itsthesky.SuperGuilds.gui.MainGUI;
 import info.itsthesky.SuperGuilds.gui.RaceGUI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.io.IOException;
 
 public class SGCommand implements CommandExecutor {
 	@Override
@@ -36,6 +39,15 @@ public class SGCommand implements CommandExecutor {
 
 		if (args[0].equalsIgnoreCase("race")) {
 			RaceGUI.openRaceGUI(player);
+			return true;
+		}
+
+		if (args[0].equalsIgnoreCase("emblem")) {
+			try {
+				EmblemEditor.openEmblemEditor(player);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return true;
 		}
 

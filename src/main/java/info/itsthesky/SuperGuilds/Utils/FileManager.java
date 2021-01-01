@@ -1,5 +1,6 @@
 package info.itsthesky.SuperGuilds.Utils;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -117,6 +118,12 @@ public class FileManager {
 			fw.write(line + "\n");
 		}
 		fw.close();
+	}
+
+	public static Boolean isValueSet(String path, String node) {
+		File file = new File("plugins/SuperGuilds/" + path + ".yml");
+		FileConfiguration fileConfig = getConfigFile(file.getPath());
+		return fileConfig.contains(node);
 	}
 
 	public static Object getPlayerValue(Player player, String node) {
