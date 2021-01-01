@@ -24,4 +24,4 @@ Key:
   Race:
     AlreadyHaveRace: '&cYou already have a race!'
     NoRightsRemaining: '&cYou don''t have any more remaining race rights!'
-    RaceChanged: You've been changed your race, you are now a {RACE} !
+    RaceChanged: 'You''ve been changed your race, you are now a {RACE} !'
